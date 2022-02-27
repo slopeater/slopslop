@@ -47,8 +47,13 @@ public class newbi : MonoBehaviour
         dict.Add(x, new d { q = 0, p = buttons, boo = false });
         dict[x].p.SetActive(true);
         dict[x].p.transform.SetParent(buttonTemplate.transform.parent, false);
-        string pigstats = $"ho";
-             dict[x].p.GetComponentInChildren<Text>().text = pigstats;
+        string pigstats = $@"
+button: {x}
+pig : {pigs[x ].su}
+iq : {pigs[x ].iq}
+kg : {pigs[x ].kg}
+id : {pigs[x ].id}";
+        dict[x].p.GetComponentInChildren<Text>().text = pigstats;
 
 
         debug();
@@ -117,7 +122,7 @@ public class newbi : MonoBehaviour
             int id = (int)r3;
 
             string fish = "s";// $"{pigs[s[0]+1].su}{pigs[s[1] + 1].su}";//"{0}{1}",pigs[s[0]+1],pigs[s[1] + 1];
-            pigs.Add(pigs.Count + 1, new d { iq = iq, kg = kg, id = id, su = "" + fish });
+            pigs.Add(pigs.Count , new d { iq = iq, kg = kg, id = id, su = "" + fish });
 
 
             dict[s[1]].p.GetComponent<Image>().color = white;
